@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  background-color: #111111;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.App .container {
+  width: 70%;
+  height: 80%;
+  background-color: rgb(5, 5, 5);
+  border-radius: 10px;
+  border: 0.5px solid rgba(255, 255, 255, 0.082);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.App .container .container-roller {
+  width: 35%;
+  height: 300%;
+  position: absolute;
+  transition: 1s;
+  -webkit-animation: rotater infinite linear 3s;
+          animation: rotater infinite linear 3s;
+}
+.App .container .container-cover {
+  width: 99.6%;
+  height: 99.4%;
+  background-color: rgb(5, 5, 5);
+  position: absolute;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  overflow: hidden;
+}
+.App .container .container-cover .category-page {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  color: white;
+}
+.App .container .container-cover .category-page .title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 20px 0 10% 20px;
+}
+.App .container .container-cover .category-page .categories {
+  width: 100%;
+}
+.App .container .container-cover .category-page .categories .category-item {
+  width: 100%;
+  padding: 12px 10px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.App .container .container-cover .category-page .categories .category-item:nth-child(2).active:hover {
+  background-color: #5e176a;
+}
+.App .container .container-cover .category-page .categories .category-item:nth-child(3).active:hover {
+  background-color: #27b09c;
+}
+.App .container .container-cover .category-page .categories .category-item.active:hover {
+  background-color: #d54359;
+}
+.App .container .container-cover .category-page .categories .category-item:hover {
+  background-color: rgba(255, 255, 255, 0.082);
+}
+.App .container .container-cover .tl-page {
+  width: 100%;
+  background-color: rgb(6, 6, 6);
+  height: 100%;
+  color: white;
+}
+.App .container .container-cover .tl-page .tl-items {
+  display: grid;
+  position: relative;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, auto));
+  padding: 5% 15% 20% 10%;
+}
+.App .container .container-cover .tl-page .tl-items .create-container {
+  width: 100%;
+  height: 100%;
+}
+.App .container .container-cover .tl-page .tl-items .create-container .create-header {
+  font-weight: 500;
+}
+.App .container .container-cover .tl-page .tl-items .create-container .input-form input {
+  background-color: #111;
+  border-radius: 50px;
+  padding: 10px 15px;
+}
+.App .container .container-cover .tl-page .tl-items .create-container .input-form input:focus {
+  outline: none;
+}
+.App .container .container-cover .tl-page .tl-items .create-container .create-category {
+  width: 100%;
+}
+.App .container .container-cover .tl-page .tl-items .create-container .create-category .category-name {
+  font-weight: 500;
+}
+.App .container .container-cover .tl-page .tl-items .create-container .create-category select {
+  width: 100%;
+  background-color: #111;
+  border-radius: 50px;
+}
+.App .container .container-cover .tl-page .tl-items .create-container .create-category select option {
+  height: 20px;
+  outline: none;
+}
+.App .container .container-cover .tl-page .tl-items .create-container .create-category select option:focus {
+  outline: none;
+}
+.App .container .container-cover .tl-page .tl-items .tl-item {
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9em;
+  border-radius: 5px;
+  padding: 15px 10px;
+  transition: background 1s;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.App .container .container-cover .tl-page .tl-items .editing-tool {
+  position: absolute;
+  height: 150px;
+  width: 240px;
+  top: 120%;
+  z-index: 4;
+  border-radius: 10px;
+  transition: 1.5s;
+}
+.App .container .container-cover .tl-page .tl-items .editing-tool .cont {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+  border-radius: 10px;
+}
+.App .container .container-cover .tl-page .tl-items .editing-tool .cont .triangle {
+  width: 20px;
+  height: 20px;
+  background: inherit;
+  position: absolute;
+  transform: translate(-50%, 0%) rotate(45deg);
+  transform-origin: center;
+  top: -5px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  border-radius: 5px;
+}
+.App .container .container-cover .tl-page .tl-items .editing-tool .cont .triangle .inner {
+  background-color: black;
+  width: 17px;
+  height: 17px;
+  background: black;
+  border-radius: 5px;
+  position: absolute;
+}
+.App .container .container-cover .tl-page .tl-items .editing-tool .cont .editbar {
+  background: inherit;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 10px;
+  z-index: 90;
+}
+.App .container .container-cover .tl-page .tl-items .editing-tool .cont .editbar .inner-bar {
+  width: 99%;
+  height: 98%;
+  background-color: black;
+  border-radius: 10px;
+  z-index: 99;
+}
+.App .container .container-cover .tl-page .tl-items .editing-tool .cont .editbar .inner-bar .edit-input {
+  margin: 20px auto;
+  width: 100%;
+  height: auto;
+}
+.App .container .container-cover .tl-page .tl-items .editing-tool .cont .editbar .inner-bar .edit-input form {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.App .container .container-cover .tl-page .tl-items .editing-tool .cont .editbar .inner-bar .edit-input button {
+  padding: 10px;
+  border-radius: 10px;
+  transition: 1s;
+}
+.App .container .container-cover .tl-page .tl-items .editing-tool .cont .editbar .inner-bar .edit-input input {
+  background-color: #111;
+  height: 40px;
+  margin: 0 5px;
+  border-radius: 5px;
+  padding: 5px 15px;
+  width: 60%;
+  font-size: 0.9em;
+  transition: 1s;
+  text-transform: capitalize;
+}
+.App .container .container-cover .tl-page .tl-items .editing-tool .cont .editbar .inner-bar .edit-input input:focus {
+  outline: none;
+}
+.App .container .container-cover .tl-page .tl-items .editing-tool .cont .editbar .inner-bar .edit-level {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 6px;
+  -moz-column-gap: 2px;
+       column-gap: 2px;
+}
+.App .container .container-cover .tl-page .tl-items .editing-tool .cont .editbar .inner-bar .edit-level div {
+  padding: 10px 15px;
+  margin: 3px;
+  border-radius: 50px;
+}
+.App .container .container-cover .tl-page .category-title {
+  margin-top: 3%;
+  padding: 5px 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.App .container .container-cover .tl-page .category-title .category-name {
+  font-weight: 700;
+}
+.App .container .container-cover .tl-page .category-title .create-button {
+  margin-right: 30px;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-weight: 500;
+  text-align: center;
+  text-transform: capitalize;
+  transition: 1s;
+  cursor: pointer;
+  background-color: inherit;
+  border-width: 2px;
+}/*# sourceMappingURL=app.css.map */
